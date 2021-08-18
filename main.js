@@ -1,8 +1,8 @@
 let nickName = document.querySelector("#username");
 let inputText = document.querySelector("#message");
-let timeText = document.querySelector("#time");
-let button = document.querySelector("#submiting");
-let mainBoard = document.querySelector(".allText")
+let inputTime = document.querySelector("#time");
+let button = document.querySelector("#submitButton");
+let mainBoard = document.querySelector(".allMessages")
 /* This will be the variable used for the main message board*/
 /*let mainContainer = document.querySelector(".allText");*/
 
@@ -12,10 +12,11 @@ button.onclick = function updateDB(event) {
     event.preventDefault();
     let username = nickName.value;
     let message = inputText.value;
-    let time = inputText.value;
+    let time = inputTime.value;
 
     nickName.value = "";
     inputText.value = "";
+    inputTime.value = "";
     console.log(username + " : " + time + " : " + message);
 
     let value = {
@@ -36,6 +37,9 @@ function addMessageToBoard(rowData) {
     let time = row.TIME;
     let message = row.MESSAGE;
     let p = document.createElement("p");
-    p.innerHTML = username + ": " + time + " : " + message;
-    userBoard.appendChild(p);
+    let p1 = document.createElement("p");
+    p.innerHTML = username + ": " + time;
+    p1.innerHTML = message;
+    mainBoard.appendChild(p);
+    mainBoard.appendChild(p1);
 } 
