@@ -37,9 +37,12 @@ function addMessageToBoard(rowData) {
     let time = row.TIME;
     let message = row.MESSAGE;
     let p = document.createElement("p");
+    let p2 = document.createElement("p");
     let p1 = document.createElement("p");
-    p.innerHTML = username + ": " + time;
-    p1.innerHTML = message;
+    p.innerHTML = username; 
+    p2.innerHTML= "Time Of Entry: " + time;
+    p1.innerHTML = "Message: " + message;
     mainBoard.appendChild(p);
+    mainBoard.appendChild(p2);
     mainBoard.appendChild(p1);
 } 
